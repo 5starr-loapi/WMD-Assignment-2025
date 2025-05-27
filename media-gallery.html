@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Gallery | 5STAR Swimming Academy</title>
+    <link rel="stylesheet" href="styles.css/reset.css">
+    <link rel="stylesheet" href="styles.css/main.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>5STAR</h1>
+                <p>Swimming Academy</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="events-competitions.html">Events & Competitions</a></li>
+                    <li><a href="coaches-staff.html">Coaches & Staff</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="media-gallery.html" class="active">Media Gallery</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="page-hero" class="hero-small">
+        <div class="container">
+            <h1>Media Gallery</h1>
+            <p>Capturing moments of triumph, learning, and team spirit</p>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <div class="gallery-filter">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="competitions">Competitions</button>
+                <button class="filter-btn" data-filter="training">Training</button>
+                <button class="filter-btn" data-filter="lessons">Swim Lessons</button>
+                <button class="filter-btn" data-filter="events">Special Events</button>
+                <button class="filter-btn" data-filter="team">Team Photos</button>
+            </div>
+
+            <div class="gallery-grid">
+                <!-- Competition Images -->
+                    <img src="images.html/Gallery 2.jpeg" alt="Swim competition">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h4>2023 Regional Championships</h4>
+                    </div>
+                </a>
+                    <img src="images.html/Gallery 3.jpeg" alt="Swim race">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h4>Summer Invitational</h4>
+                    </div>
+                </a>
+
+                <!-- Training Images -->
+                    <img src="images.html/Gallery 4.jpeg" alt="Swim training">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h4>Stroke Technique</h4>
+                    </div>
+                </a>
+
+                <!-- Swim Lessons Images -->
+                    <img src="images.html/Gallery 5.jpeg" alt="Parent Lesson">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h4>Parent & Child Class</h4>
+                    </div>
+                </a>
+
+                <!-- Special Events Images -->
+                    <img src="images.html/Galery 6.jpeg" alt="Awards banquet">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h4>Annual Awards Banquet</h4>
+                    </div>
+
+                <!-- Team Photos -->
+                    <img src="images.html/Gallery 7.jpeg" alt="Team photo">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h4>2023 Team Photo</h4>
+                    </div>
+                    <img src="images.html/Gallery 1.jpeg" alt="Age group team">
+                    <div class="gallery-overlay">
+                        <i class="fas fa-search-plus"></i>
+                        <h4>Age Group Team</h4>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>5STAR Swimming Academy</h3>
+                    <p>Building confident swimmers and competitive athletes since 2010.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="events-competitions.html">Events & Competitions</a></li>
+                        <li><a href="coaches-staff.html">Coaches & Staff</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="media-gallery.html">Media Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 5STAR Swimming Academy Plot 75791 Setlhoa Village</p>
+                    <p><i class="fas fa-phone"></i> (+267) 77 521 179</p>
+                    <p><i class="fas fa-envelope"></i> info@5STAR Swimming Academy.com</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 5STAR Swimming Academy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightgallery JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/lightgallery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/plugins/thumbnail/lg-thumbnail.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/plugins/zoom/lg-zoom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.0/plugins/fullscreen/lg-fullscreen.min.js"></script>
+
+    <script>
+        // Initialize lightGallery
+        document.addEventListener('DOMContentLoaded', () => {
+            lightGallery(document.getElementById('gallery'), {
+                selector: '.gallery-item',
+                download: false,
+                zoom: true,
+                thumbnail: true
+            });
+
+            // Filter functionality
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Update active button
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const filterValue = button.dataset.filter;
+
+                    // Filter items
+                    galleryItems.forEach(item => {
+                        if (filterValue === 'all' || item.dataset.category === filterValue) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            // Video play functionality (simplified for demo)
+            document.querySelectorAll('.play-button').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('In a real implementation, this would open the video player.');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
